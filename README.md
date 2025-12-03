@@ -1,8 +1,9 @@
+
 Para rodar Backend (no terminal): 
 cd backend
 npm init -y
 npm install express cors
----------------------------------
+
 Para rodar Frontend(no terminal):
 npm install -g serve
 cd frontend
