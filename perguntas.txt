@@ -1,0 +1,8 @@
+1. : O middleware CORS adiciona o cabeçalho Acess Control-Allow-origin, 
+e ele diz pro navegador quais origens tem permissao pra acessar a api, no caso o localhost 3000
+
+2. : Sim, ainda iria bloquear porque a definiçao de origem no navegador leva em conta o protocolo,
+dominio e porta, como mudou de origem o navegador não vai reconhecer a permissao automaticamente
+
+3. : Não iria ter erro do CORS, mas todo mundo pode acessar, o que não é seguro, e tambem não é 
+permitido quando ha cookies ou credenciais

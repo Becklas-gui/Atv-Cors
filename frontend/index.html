@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Frontend em 3000</title>
+
+</head>
+<body>
+
+    <h1>Cliente origem: 3000</h1>
+    <p>Tentando acessar a API origem: 8080...</p>
+
+    <button onclick="fazerRequisicao()">Acessar API</button>
+    <pre id="resultado"></pre>
+
+
+<script>
+
+    const API_URL = "http://localhost:8080/api/mensagem";
+    const resultadoElemento = document.getElementById("resultado");
+
+    async function fazerRequisicao() {
+        resultadoElemento.textContent = "carregando...";
+
+        try {
+        
+            const response = await fetch(API_URL);
+
+          
+            const json = await response.json();
+            resultadoElemento.textContent = JSON.stringify(json, null, 2);
+
+        } catch (erro) {
+           
+            resultadoElemento.textContent = "Erro na requisição (erro de CORS no console)";
+            console.error("Erro na requisição (provavel erro de CORS):", erro);
+            
+        }
+    }
+    
+</script>
+
+</body>
+</html>
